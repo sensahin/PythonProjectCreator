@@ -66,13 +66,6 @@ def copygitignore(project_name):
     dest = repo_folder + '/{}/.gitignore'.format(project_name)
     open(dest, 'w').write(open(source).read())
     print('Gitigore file copied')
-    installPackages(project_name)
-
-def installPackages(project_name):
-    os.chdir(repo_folder + '/{}'.format(project_name))
-    os.system('source env/bin/activate')
-    os.system('pip3 install -r requirements.txt')
-    print('Packages installed')
     openVSCode(project_name)
 
 def openVSCode(project_name):
