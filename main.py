@@ -71,7 +71,7 @@ def copygitignore(project_name):
 def installPackages(project_name):
     os.chdir(repo_folder + '/{}'.format(project_name))
     os.system('source env/bin/activate')
-    os.system('pip install -r requirements.txt')
+    os.system('pip3 install -r requirements.txt')
     print('Packages installed')
     openVSCode(project_name)
 
