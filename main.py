@@ -41,9 +41,9 @@ def createvenv(project_name):
     os.chdir(repo_folder + '/{}'.format(project_name))
     os.system('python3 -m venv env')
     print('venv Created')
-    creareRequirementsTxt(project_name)
+    createRequirementsTxt(project_name)
 
-def creareRequirementsTxt(project_name):
+def createRequirementsTxt(project_name):
     userchoice = input('Do you want to install any packages? (y/n): ')
     if userchoice == 'y':
         packagename = input('Enter package name: ')
@@ -58,7 +58,7 @@ def creareRequirementsTxt(project_name):
         copygitignore(project_name)
     else:
         print('Please enter y or n')
-        creareRequirementsTxt(project_name)
+        createRequirementsTxt(project_name)
     copygitignore(project_name)
 
 def copygitignore(project_name):
@@ -66,6 +66,13 @@ def copygitignore(project_name):
     dest = repo_folder + '/{}/.gitignore'.format(project_name)
     open(dest, 'w').write(open(source).read())
     print('Gitigore file copied')
+    installPackages(project_name)
+
+def installPackages(project_name):
+    os.chdir(repo_folder + '/{}'.format(project_name))
+    os.system('source env/bin/activate')
+    os.system('pip install -r requirements.txt')
+    print('Packages installed')
     openVSCode(project_name)
 
 def openVSCode(project_name):
