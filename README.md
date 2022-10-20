@@ -1,0 +1,1 @@
+# This script create Python project folder for the lazy ones.
