@@ -68,6 +68,7 @@ def copygitignore(project_name):
     print('Gitigore file copied')
     openVSCode(project_name)
 
+
 def openVSCode(project_name):
     filepath = repo_folder + '/{}'.format(project_name)
     os.system('code {}'.format(filepath))
