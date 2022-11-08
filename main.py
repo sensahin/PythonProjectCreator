@@ -1,6 +1,6 @@
 import os
 
-repo_folder = '/Users/senolsahin/test'
+repo_folder = '/Users/senolsahin/Work'
 
 def main():
     createFolder()
@@ -62,7 +62,7 @@ def createRequirementsTxt(project_name):
     copygitignore(project_name)
 
 def copygitignore(project_name):
-    source = '/Users/senolsahin/test/envCreator/.gitignore'
+    source = '/Users/senolsahin/Work/envCreator/.gitignore'
     dest = repo_folder + '/{}/.gitignore'.format(project_name)
     open(dest, 'w').write(open(source).read())
     print('Gitigore file copied')
